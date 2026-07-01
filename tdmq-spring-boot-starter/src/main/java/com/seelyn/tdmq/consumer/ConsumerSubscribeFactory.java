@@ -9,6 +9,7 @@ import com.seelyn.tdmq.exception.ConsumerInitException;
 import com.seelyn.tdmq.exception.MessageRedeliverException;
 import com.seelyn.tdmq.utils.ExecutorUtils;
 import com.seelyn.tdmq.utils.SchemaUtils;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
@@ -22,7 +23,6 @@ import org.apache.pulsar.client.api.Message;
 import org.apache.pulsar.client.api.Messages;
 import org.apache.pulsar.client.api.PulsarClient;
 import org.apache.pulsar.client.api.PulsarClientException;
-import org.apache.pulsar.shade.com.google.common.collect.Lists;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.SmartInitializingSingleton;
@@ -70,7 +70,7 @@ public class ConsumerSubscribeFactory
             Map<String, ConsumerMetadata> listenerMap = consumerMetadataMap.getMap();
 
             List<SubscribeConsumerExecutor> consumerExecutors =
-                Lists.newArrayListWithCapacity(listenerMap.size());
+                new ArrayList<>(listenerMap.size());
             int index = 1;
             for (Map.Entry<String, ConsumerMetadata> entry : listenerMap.entrySet()) {
                 consumerExecutors.add(subscribe(entry.getValue(), index));

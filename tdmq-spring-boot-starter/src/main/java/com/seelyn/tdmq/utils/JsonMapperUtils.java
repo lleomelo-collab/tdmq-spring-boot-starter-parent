@@ -1,10 +1,10 @@
 package com.seelyn.tdmq.utils;
 
-import org.apache.pulsar.shade.com.fasterxml.jackson.core.json.JsonReadFeature;
-import org.apache.pulsar.shade.com.fasterxml.jackson.databind.DeserializationFeature;
-import org.apache.pulsar.shade.com.fasterxml.jackson.databind.JavaType;
-import org.apache.pulsar.shade.com.fasterxml.jackson.databind.SerializationFeature;
-import org.apache.pulsar.shade.com.fasterxml.jackson.databind.json.JsonMapper;
+import com.fasterxml.jackson.core.json.JsonReadFeature;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.JavaType;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.databind.json.JsonMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.util.StringUtils;

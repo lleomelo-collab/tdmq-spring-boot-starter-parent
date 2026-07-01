@@ -30,9 +30,7 @@ public class ExecutorUtils {
         private final String namePrefix;
 
         ConsumerBatchThreadFactory(String name) {
-            SecurityManager s = System.getSecurityManager();
-            group = (s != null) ? s.getThreadGroup() :
-                    Thread.currentThread().getThreadGroup();
+            group = Thread.currentThread().getThreadGroup();
             namePrefix = "tdmq-" + name + "-";
         }
 
